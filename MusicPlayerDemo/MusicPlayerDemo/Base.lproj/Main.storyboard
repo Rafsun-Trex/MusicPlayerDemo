@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Lx-iR-xdO">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="z8I-P9-9hj">
+            <objects>
+                <tabBarController id="2Lx-iR-xdO" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wbJ-XU-nwW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="RTv-0i-YSv"/>
+                        <segue destination="w57-x9-Iyw" kind="relationship" relationship="viewControllers" id="WK4-7d-Rgf"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fpp-Iw-A2y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2348" y="-276"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="HomeVC" id="BYZ-38-t0r" customClass="HomeVC" customModule="MusicPlayerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IDO-bs-DBp">
+                                <rect key="frame" x="0.0" y="47" width="428" height="796"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="wC4-Nv-djq"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YDn-1E-E9I"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IDO-bs-DBp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KDw-le-LYH"/>
+                            <constraint firstItem="IDO-bs-DBp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="V5O-V9-pO2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IDO-bs-DBp" secondAttribute="bottom" id="a84-x6-Opk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IDO-bs-DBp" secondAttribute="trailing" id="cf6-oX-mdV"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="music.note.house" catalog="system" id="VwG-wX-P38"/>
+                    <connections>
+                        <outlet property="musicTableView" destination="IDO-bs-DBp" id="GsG-p7-clh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1235" y="-276"/>
+        </scene>
+        <!--Music PlayVC-->
+        <scene sceneID="VLT-Bv-x4k">
+            <objects>
+                <viewController storyboardIdentifier="MusicPlayVC" id="p0A-lC-x6E" customClass="MusicPlayVC" customModule="MusicPlayerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zn7-b2-Tyb">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEG-7j-Pvl">
+                                <rect key="frame" x="136" y="643" width="43.333333333333343" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="btnPlayPauseMusicAction:" destination="p0A-lC-x6E" eventType="touchUpInside" id="DV9-oe-0VK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zN-St-sVi">
+                                <rect key="frame" x="245.33333333333334" y="643" width="46.666666666666657" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="stop.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="btnStopMusicAction:" destination="p0A-lC-x6E" eventType="touchUpInside" id="XIi-eD-AeG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNn-iT-UBq">
+                                <rect key="frame" x="30" y="643" width="56" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="backward.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="btnPreviousTrackAction:" destination="p0A-lC-x6E" eventType="touchUpInside" id="j3z-wN-v31"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftw-iC-1dE">
+                                <rect key="frame" x="342" y="643" width="56" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="forward.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="btnNextTrackAction:" destination="p0A-lC-x6E" eventType="touchUpInside" id="ep3-IF-DmC"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9M2-oC-l6S">
+                                <rect key="frame" x="20" y="313" width="388" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Lv6-rj-aNV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUQ-Ow-6a1">
+                                <rect key="frame" x="193" y="272" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eeN-Ee-A6i"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CUQ-Ow-6a1" firstAttribute="centerX" secondItem="9M2-oC-l6S" secondAttribute="centerX" id="8vV-Le-L2q"/>
+                            <constraint firstItem="ftw-iC-1dE" firstAttribute="top" secondItem="9M2-oC-l6S" secondAttribute="bottom" constant="30" id="CjL-dm-YQK"/>
+                            <constraint firstItem="aNn-iT-UBq" firstAttribute="top" secondItem="9M2-oC-l6S" secondAttribute="bottom" constant="30" id="IkC-Rf-1e6"/>
+                            <constraint firstItem="ftw-iC-1dE" firstAttribute="leading" secondItem="7zN-St-sVi" secondAttribute="trailing" constant="50" id="LEq-Lr-6Pe"/>
+                            <constraint firstItem="MEG-7j-Pvl" firstAttribute="top" secondItem="9M2-oC-l6S" secondAttribute="bottom" constant="30" id="OVZ-Xk-a9j"/>
+                            <constraint firstItem="aNn-iT-UBq" firstAttribute="leading" secondItem="eeN-Ee-A6i" secondAttribute="leading" constant="30" id="W4m-cf-kiU"/>
+                            <constraint firstItem="9M2-oC-l6S" firstAttribute="centerX" secondItem="Zn7-b2-Tyb" secondAttribute="centerX" id="Xcv-VS-qes"/>
+                            <constraint firstItem="MEG-7j-Pvl" firstAttribute="leading" secondItem="aNn-iT-UBq" secondAttribute="trailing" constant="50" id="Xd0-EH-2hM"/>
+                            <constraint firstItem="7zN-St-sVi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MEG-7j-Pvl" secondAttribute="trailing" constant="8" symbolic="YES" id="dBj-s3-TIW"/>
+                            <constraint firstItem="eeN-Ee-A6i" firstAttribute="trailing" secondItem="9M2-oC-l6S" secondAttribute="trailing" constant="20" id="nWT-Xk-HVP"/>
+                            <constraint firstItem="7zN-St-sVi" firstAttribute="top" secondItem="9M2-oC-l6S" secondAttribute="bottom" constant="30" id="ony-vF-Vo4"/>
+                            <constraint firstItem="9M2-oC-l6S" firstAttribute="centerY" secondItem="Zn7-b2-Tyb" secondAttribute="centerY" id="shc-3a-kmS"/>
+                            <constraint firstItem="9M2-oC-l6S" firstAttribute="top" secondItem="CUQ-Ow-6a1" secondAttribute="bottom" constant="20" id="vDG-aX-dVs"/>
+                            <constraint firstItem="eeN-Ee-A6i" firstAttribute="trailing" secondItem="ftw-iC-1dE" secondAttribute="trailing" constant="30" id="zKo-LC-hww"/>
+                            <constraint firstItem="9M2-oC-l6S" firstAttribute="leading" secondItem="eeN-Ee-A6i" secondAttribute="leading" constant="20" id="zgv-9d-WuN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnPlayPause" destination="MEG-7j-Pvl" id="6ap-FG-bWN"/>
+                        <outlet property="btnStop" destination="7zN-St-sVi" id="OxG-hT-eX3"/>
+                        <outlet property="currentMusicImageView" destination="9M2-oC-l6S" id="77z-6h-mr5"/>
+                        <outlet property="lblMusicName" destination="CUQ-Ow-6a1" id="pu9-LZ-Uab"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dgd-ZF-uUI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-145.79439252336448" y="-276.02591792656591"/>
+        </scene>
+        <!--Playlist-->
+        <scene sceneID="5Tt-Gc-bRv">
+            <objects>
+                <viewController storyboardIdentifier="PlaylistVC" id="w57-x9-Iyw" customClass="PlaylistVC" customModule="MusicPlayerDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NST-yw-Kfb">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Z5c-RR-xDv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Playlist" image="music.note.list" catalog="system" id="AAh-ax-SqD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P2B-7U-Sv1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1235" y="452"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backward.fill" catalog="system" width="128" height="77"/>
+        <image name="forward.fill" catalog="system" width="128" height="77"/>
+        <image name="music.note.house" catalog="system" width="128" height="104"/>
+        <image name="music.note.list" catalog="system" width="128" height="115"/>
+        <image name="play.fill" catalog="system" width="117" height="128"/>
+        <image name="stop.fill" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
